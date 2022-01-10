@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Share+Tech+Mono&display=swap');
+
+/* font-family: 'Share Tech Mono', monospace; */
+/* font-family: 'Montserrat', sans-serif; */
+
+/* font */
+.login-page {
+    width: 400px;
+    padding: 8% 0 0;
+    margin: auto;
+    
+  
+    
+  
+  }
+  .form {
+    position: relative;
+    z-index: 1;
+    background: #48c9b0;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    
+  }
+  .form input {
+    font-family: FontAwesome, "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+  border-radius:10px;
+    
+  }
+  .form button {
+    font-family: "Titillium Web", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: .1em;
+    outline: 0;
+    background: #17a589;
+    width: 100%;
+    border: 0;
+  border-radius:30px;
+    margin: 0px 0px 8px;
+    padding: 15px;
+    color: #FFFFFF;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    transition: all 0.2s;
+  
+  
+  }
+/*—————————————————————————————————————————————————  
+Base STYLES
+—————————————————————————————————————————————————*/
+body {
+  
+        background-image: url('bacl.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 4rem;
+    color: #313531;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 3rem;
+    color: white;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #4399db;
+    display: inline-block;
+    border-left: 3px solid #1f5178;
+    border-top: 1px solid #1f5178;
+    border-right: 1px solid #1f5178;
+    border-bottom: 1px solid #1f5178;
+    padding: 4px 8px;
+    margin-bottom: 1.2rem;
+}
+
+h4 {
+    font-family: 'Share Tech Mono', monospace;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif; 
+    color: white;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+code {
+    display: inline-block;
+    background-color: #313531;
+    font-family: 'Share Tech Mono', monospace;
+    padding: 3px 5px 0 5px;
+    font-weight: normal;
+    border: #404950 solid 1px;
+    border-radius: 3px;
+    color: #d8ebff;
+}
+
+button code {
+    background-color: #163c58;
+    border: #14364e solid 1px;
+    
+}
+
+.container--mx-width {
+    max-width: 800px;
+}
+
+.btn--main-style {
+    background-color: #1f5178;
+    box-shadow: 0 5px 8px 2px #131c24;
+    color: white;
+    font-family: 'Share Tech Mono', monospace;
+    display: block;
+    margin-bottom: 1.2rem;
+}
+
+.btn--lg-pad {
+    padding: .8rem 2.5rem;
+}
+
+.btn:hover {
+    box-shadow: 0 1px 1px 0 #02121f;
+    color: #4399db;
+    transition: .3s;
+}
+
+.btn:active {
+    box-shadow: none;
+    background-color: #1b4768;
+    background-color: rgba(31, 81, 120, 0.6);
+    transition: .3s;
+}
+
+/*—————————————————————————————————————————————————  
+Nav STYLES
+—————————————————————————————————————————————————*/
+.navbar {
+    font-size: 67px;
+    background-color:lightseagreen;
+    border-bottom: #101010 1px solid;
+}
+
+.nav__timer {
+    color: black;
+    color: black;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+#timeLeft {
+    font-weight: bold;
+    color: blue;
+}
+
+.navbar__logo {
+    height: 7ch;
+}
+
+#viewScore {
+    color: black;
+    font-family: 'Share Tech Mono', monospace;
+    background: none;
+    border: none;
+}
+
+#viewScore:hover {
+    color: #3a80b6;
+    color: rgba(67, 153, 219, 0.7);
+    transition: .4s;
+    text-decoration: none;
+}
+
+
+/*—————————————————————————————————————————————————  
+Start Screen STYLES
+—————————————————————————————————————————————————*/
+.start-content {
+    color: white;
+    text-align: center;
+}
+
+
+/*—————————————————————————————————————————————————  
+Question STYLES
+—————————————————————————————————————————————————*/
+.question--style {
+    font-size: 28px;
+    margin-bottom: 2rem;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+
+/*—————————————————————————————————————————————————  
+Feedback STYLES
+—————————————————————————————————————————————————*/
+.feedback {
+    color: white;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 28px;
+    margin-top: 2.5rem;
+}
+
+.feedback--correct-color {
+    color: #ffdf39;
+}
+
+.feedback--wrong-color {
+    color: #ff4e24;
+}
+
+#correctFeedback {
+    border-top: #101010 1px solid;
+    padding-top: 1rem;
+}
+
+#wrongFeedback {
+    border-top: #101010 1px solid;
+    padding-top: 1rem;
+}
+
+
+/*—————————————————————————————————————————————————  
+Completed STYLES
+—————————————————————————————————————————————————*/
+#completedDisplay {
+    color: white;
+    text-align: center;
+}
+
+#finalScore {
+    font-weight: bold;
+    color: white;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.completed__form {
+    background-color: #232323;
+    /* border: #101010 1px solid; */
+    padding: 40px;
+    max-width: 400px;
+    box-shadow: 0 5px 8px 2px #1c1d1c;
+    margin: 1rem auto;
+}
+
+.form-control {
+    background-color: #14181b;
+    border: 1px solid #303335;
+}
+
+
+
+/*—————————————————————————————————————————————————  
+Highscores STYLES
+—————————————————————————————————————————————————*/
+#highscoreDisplay {
+    color: white;
+    text-align: center;
+}
+
+.scores {
+    background-color: #232323;
+    padding: 10px 20px;
+    max-width: 400px;
+    box-shadow: 0 5px 8px 2px #1c1d1c;
+    margin: 1rem auto;
+}
+
+li {
+    padding: 1rem .5rem;
+    list-style: none;
+    border-bottom: #101010 1px solid;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+li:nth-child(even) {
+    background-color: #1b1d1b;
+}
+
+li:last-child {
+    border: none;
+}
+
+.btn-group {
+    margin: 0 auto;
+}
+
+
+#playAgainBtn,
+#clearBtn {
+    margin: 1rem 10px;
+}
