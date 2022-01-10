@@ -1,21 +1,29 @@
+// Global Scope Variables For DOM Element
 
+// Targets Correct Feedback for Questions
 let correctFeedback = document.querySelector("#correctFeedback");
 
-
+// Targets Wrong Feedback for Questions
 let wrongFeedback = document.querySelector("#wrongFeedback");
 
+// Targets Timer
 let timeLeft = document.querySelector("#timeLeft");
 
+// Targets Final Score
 let finalScore = document.querySelector("#finalScore");
 
-
+// Holds Final Score value
 let inputValue;
 
 
+// Initials Input Element
 let inputId = document.querySelector("#inputId");
 
+// ul List for High Scores
 let scoreList = document.querySelector(".scores");
 
+
+// Target Display Sections
 let startQuizDisplay = document.querySelector(".start-content");
 let q1Display = document.querySelector("#question-1");
 let q2Display = document.querySelector("#question-2");
@@ -25,12 +33,19 @@ let q5Display = document.querySelector("#question-5");
 let completedDisplay = document.querySelector("#completedDisplay");
 let highscoreDisplay = document.querySelector("#highscoreDisplay");
 
+
+
+// Target Buttons
 let startQuizBtn = document.querySelector("#startQuiz");
 let navHighscore = document.querySelector("#viewScore");
 let playAgainBtn = document.querySelector("#playAgainBtn");
 let clearBtn = document.querySelector("#clearBtn");
 
 
+// —————————————————————————————————————————————————————
+
+
+// Object that holds all the answers  
 let answers = {
     question1: {
         answer1: document.querySelector("#q1A1"),
@@ -329,26 +344,33 @@ function question4() {
             event.target === answers.question4.answer3 ||
             event.target === answers.question4.answer4) {
 
+            // Flashes wrong text
             showWrong();
         }
     });
 }
 
+// —————————————————————————————————————————————————————
+
+// This runs Question 5
 function question5() {
     
-   
+    // Displays Section Content
     q5Display.classList.add("show");
     q5Display.classList.remove("hide");
 
     q5Display.addEventListener("click", function (event) {
-        
+        // Coniditionals to validate if the correct answer is selected
         if (event.target.type === "button" && event.target === answers.question5.answer4) {
 
+            // Flashes correct text
             showCorrect();
 
+            // Hides Current Question Section
             q5Display.classList.remove("show"); 
             q5Display.classList.add("hide");
- 
+
+            // Goes to completed screen
             quizComplete();
 
         } else if (event.target.type === "button" &&
@@ -356,77 +378,102 @@ function question5() {
             event.target === answers.question5.answer2 ||
             event.target === answers.question5.answer3) {
 
+            // Flashes wrong text
             showWrong();
         }
     });
 }
 
+
+// —————————————————————————————————————————————————————
+
+
+// This runs the Completed Screen
 function quizComplete() {
 
-
+    // ensures that last section and the feedback section do not appear
     completedDisplay.classList.remove("show"); 
     completedDisplay.classList.add("hide");
     hideFeedbackSection();
     
+    // Forces Interval to Clear
     for(let a=0; a<100; a++){
         window.clearInterval(a);
     }
 
+    // Displays final score based on time left
     finalScore.textContent = timerAmount;
 
+    // Replaces timer text with 0
     timeLeft.textContent = "0";
         
-    
+    // Hide all Sections
     hideAllQuestions();
 
+    // Displays Section Content
     completedDisplay.classList.add("show");
     completedDisplay.classList.remove("hide");
 
     completedDisplay.addEventListener("click", function (event) {
-
+        
+        // Coniditionals to validate if form was submitted
         if (event.target.type === "submit") {
             event.preventDefault();
             inputValue = inputId.value; 
 
+            // Hides Completed Screen
             completedDisplay.classList.remove("show"); 
             completedDisplay.classList.add("hide");
 
+            // Goes to highscore section
             highscores();
 
         }
     });
 }
 
+
+// —————————————————————————————————————————————————————
+
+
+// This runs the highscore Screen
 function highscores() {
 
 
+    // Displays Section Content
     highscoreDisplay.classList.add("show");
     highscoreDisplay.classList.remove("hide");
 
-  
+    // This makes sure the list only generates if a form inout is made
     if (inputValue) {
         let userScore = document.createElement("li");
         finalScore = finalScore.textContent;
         userScore.textContent = `${inputValue} scored ${finalScore} points`; 
 
-     
+        // Adds li with initals and score to the "scores" ul element
         scoreList.append(userScore);
     }
 
+    
+    // Controls high score buttons
     highscoreDisplay.addEventListener("click", function (event) {
         
-       
+        // Coniditionals to validate if form was submitted
         if (event.target.type === "button" && event.target === playAgainBtn) { 
 
+            // Hides Completed Screen
             highscoreDisplay.classList.remove("show"); 
             highscoreDisplay.classList.add("hide");
 
+            // Goes to start section
             startQuizDisplay.classList.add("show");
             startQuizDisplay.classList.remove("hide");
         }
 
+        // Coniditionals to validate if form was submitted
         else if (event.target.type === "button" && event.target === clearBtn) { 
 
+            // Deletes all the li elements
             scoreList.innerHTML = "";
         }
     });
@@ -434,6 +481,11 @@ function highscores() {
 
 }
 
+
+// —————————————————————————————————————————————————————
+
+
+// Navbar Highscore Event Listner 
 navHighscore.addEventListener("click", function(event) {
     if (event.target.type === "button" && event.target === this) {
         hideStartSection();
